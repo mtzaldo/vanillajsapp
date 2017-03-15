@@ -9,17 +9,25 @@
 	function Home(container, data) {
 		var that = this;
 
-		$dom.elAsync({ template: 'home.html' })
-			.then( t => template = t)
-			.catch( error => console.log(error));
+		//
+		// Init page async
+		//
+		// $dom.elAsync({ template: 'home.html' })
+		// 	.then( t => template = t)
+		// 	.catch( error => console.log(error));
 
-		setTimeout(function() {
+		// setTimeout(function() {
 			
-			init(template, data, that);
+		// 	init(template, data, that);
 
-			append(template, container);
+		// 	append(template, container);
 
-		}, 250);
+		// }, 250);
+
+		template = $dom.el({ template: app.template.get('home') });
+
+		init(template, data, that);
+		append(template, container);
 	}
 
 	var init = function(template, data, context) {
